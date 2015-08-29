@@ -19,13 +19,11 @@ public enum Direction {
 	}
 
 	public Direction getRight() {
-		int next = this.ordinal() == values().length - 1 ? 0 : this.ordinal() + 1;
-		return values()[next];
+		return values()[(this.ordinal() + 1) % 4];
 	}
 
 	public Direction getLeft() {
-		int prev = this.ordinal() == 0 ? values().length - 1 : this.ordinal() - 1;
-		return values()[prev];
+		return values()[(this.ordinal() + 3) % 4];
 	}
 
     // Optional: Create an app that shows a maze on a rectangular grid, and traces a "robot"
